@@ -1,0 +1,16 @@
+{
+    "namespace": "schema.avro",
+    "type": "record",
+    "name": "UploadFileMessage",
+    "fields": [
+        { "name": "url", "type": "string" },
+        { "name": "id", "type": "long" },
+        {
+            "name": "timestamp",
+            "type": {
+                "type": "long",
+                "logicalType": "timestamp-millis"
+            }
+        }
+    ]
+}

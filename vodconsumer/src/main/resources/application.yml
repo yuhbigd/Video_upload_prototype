@@ -1,0 +1,15 @@
+spring:
+    kafka:
+        bootstrap-servers: localhost:9092
+        consumer:
+            auto-offset-reset: earliest
+            max-poll-records: 4
+        registry-url: http://localhost:8081
+    datasource:
+        url: jdbc:postgresql://localhost:5432/postgres?schema=public&stringtype=unspecified
+        username: admin
+        password: admin1234
+application:
+    s3:
+        url: http://localhost:4566
+        bucket: sample-bucket

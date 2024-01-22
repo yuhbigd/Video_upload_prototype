@@ -1,0 +1,27 @@
+server:
+    port: 8888
+    servlet:
+        context-path: /api
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/postgres?schema=public&stringtype=unspecified
+        username: admin
+        password: admin1234
+    jpa:
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                show-sql: true
+            ddl-auto: update
+    servlet:
+        multipart:
+            enabled: false
+            max-file-size: -1
+            max-request-size: -1
+application:
+    s3:
+        bucket: sample-bucket
+    kafka:
+        upload-file-topic: file-upload
+        bootstrap-servers: localhost:9092
+        registry-url: http://localhost:8081
