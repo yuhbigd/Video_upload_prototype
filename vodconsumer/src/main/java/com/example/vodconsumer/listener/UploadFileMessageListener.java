@@ -43,6 +43,7 @@ public class UploadFileMessageListener implements KafkaConsumer<UploadFileMessag
     public void receive(@Payload UploadFileMessage payload, @Header(KafkaHeaders.RECEIVED_KEY) String key,
             @Header(KafkaHeaders.RECEIVED_PARTITION) Integer partition, @Header(KafkaHeaders.OFFSET) Long offset,
             Acknowledgment ack) {
+        // https://github.com/spring-projects/spring-kafka/issues/742#issuecomment-405350961
         kafkaSupport.pauseConsume("consumer", "file-upload", partition);
         CompletableFuture.runAsync(() -> {
             System.out.println("processing " + key + ", " + partition);
